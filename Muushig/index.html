@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js" defer></script>
+    <div class="container">
+        <div class="buttons">
+            <button class="button" id="playButton"><h1>Play</h1></button>
+            <button class="button" id="profileButton"><h1>Profile</h1></button>
+            <button class="button" id="settingsButton"><h1>Settings</h1></button>
+            <button class="button" id="statsButton"><h1>Stats</h1></button>
+
+            <!-- Hidden buttons -->
+            <button class="button hidden" id="joinButton"><h1>Join</h1></button>
+            <button class="button hidden" id="createRoomButton"><h1>Create Room</h1></button>
+        </div>
+
+        <!-- Placeholder for dynamic forms -->
+        <div class="form-container hidden" id="formContainer"></div>
+
+        <!-- Back button -->
+        <button class="button hidden" id="backButton">
+            <h1>&larr; Back</h1>
+        </button>
+
+        <!-- Other assets -->
+        <div class="background">
+            <img src="assets/background.png" alt="">
+        </div>
+        <audio id="backgroundMusic" loop autoplay>
+            <source src="assets/music.mp3" type="audio/mp3">
+        </audio>
+    </div>
+</body>
+</html>

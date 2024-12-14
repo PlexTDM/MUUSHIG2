@@ -1,0 +1,260 @@
+/* General reset and styles */
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.player {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.card {
+  margin: -20px;
+  width: 100px;
+  height: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Move the selected card to the center */
+.card.centered {
+  margin: -40px;
+  height: auto;
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-950%, -650%);
+  z-index: 10; /* Ensure the centered card is above the others */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+p,
+span,
+div {
+  user-select: none;
+}
+
+@font-face {
+  font-family: "Niggerfont";
+  src: url("/fonts/PressStart2P-Regular.ttf") format("truetype");
+  font-weight: normal; /* Define weight (e.g., normal, bold) */
+  font-style: normal; /* Define style (e.g., normal, italic) */
+}
+
+.container #player1 {
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  bottom: -5vw;
+}
+.container #player1 img {
+  position: relative;
+  transition: bottom 0.3s ease;
+}
+.container #player1 img.clicked {
+  bottom: 2vw; /* Keep in hovered position when clicked */
+}
+
+.container #player2 {
+  transform: translate(-45%, -10%) rotate(90deg); /* Adjusts both vertical centering and rotation */
+
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%; /* Centers vertically within the parent */
+  left: 10vh; /* Places the container to the left side of the page */
+}
+
+.container #player2 img {
+  transform: scale(0.3); /* Reduces the size of the images */
+  margin: -60px; /* Adjusts spacing between cards */
+}
+
+.container #player3 {
+  transform: translate(45%, 120%) rotate(90deg); /* Adjusts both vertical centering and rotation */
+
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%; /* Centers vertically within the parent */
+  right: 10vh; /* Places the container to the left side of the page */
+}
+
+.container #player3 img {
+  transform: scale(0.3); /* Reduces the size of the images */
+  margin: -60px; /* Adjusts spacing between cards */
+}
+
+.container #player4 {
+  transform: translate(-15%, -350%) rotate(180deg); /* Adjusts both vertical centering and rotation */
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%; /* Centers vertically within the parent */
+  right: 10vh; /* Places the container to the left side of the page */
+}
+
+.container #player4 img {
+  transform: scale(0.3); /* Reduces the size of the images */
+  margin: -60px; /* Adjusts spacing between cards */
+}
+
+.container #player5 {
+  transform: translate(25%, -350%) rotate(180deg); /* Adjusts both vertical centering and rotation */
+  height: fit-content;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%; /* Centers vertically within the parent */
+  right: 10vh; /* Places the container to the left side of the page */
+}
+
+.container #player5 img {
+  transform: scale(0.3); /* Reduces the size of the images */
+  margin: -60px; /* Adjusts spacing between cards */
+}
+
+.button {
+  transform: scale(0.5);
+  right: 22vh;
+  bottom: -1vh;
+  z-index: 11;
+  position: absolute;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  background-color: rgb(223, 223, 223);
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+  border-right: 3px solid gray;
+  border-bottom: 3px solid gray;
+  font-family: Niggerfont;
+  font-size: 1.1rem;
+  font-weight: 900;
+  outline: 2px solid black;
+}
+
+.button:hover {
+  background-color: rgb(172, 172, 172);
+  color: white;
+  outline-color: white;
+  border-left: 3px solid rgb(255, 255, 255);
+  border-top: 3px solid rgb(255, 255, 255);
+  border-right: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+.button:active {
+  background-color: rgb(103, 246, 1);
+  border-left: 3px solid green;
+  border-top: 3px solid green;
+  border-right: 3px solid rgb(0, 255, 0);
+  border-bottom: 3px solid rgb(0, 255, 0);
+}
+
+.button h1 {
+  font-size: 2vw;
+  width: 20vw;
+}
+
+.hud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  flex-direction: column; /* Stack the elements vertically */
+}
+
+.hud h1 {
+  font-size: medium;
+  color: white;
+  font-family: niggerfont;
+  text-align: center;
+  margin: 0; /* Remove margin for accurate positioning */
+  position: relative; /* Allow positioning inside .hud */
+}
+
+.hud .p2 {
+  position: absolute;
+  top: 40%; /* Move Player 2 to the top of the container */
+  left: 20vh;
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.hud .p3 {
+  position: absolute;
+  top: 8%; /* Move Player 3 lower */
+  left: 56vh;
+  transform: translateX(-50%);
+}
+
+.hud .p4 {
+  position: absolute;
+  top: 8%; /* Move Player 4 further down */
+  right: 45vh;
+  transform: translateX(-50%);
+}
+
+.hud .p5 {
+  position: absolute;
+  top: 40%; /* Move Player 5 even lower */
+  right: 7vh;
+  transform: translateX(-50%);
+}
+
+.hud .work {
+  transform: scale(0.5);
+  position: absolute;
+  left: 25vh;
+  top: 37%;
+}
+
+.hud .change {
+  transform: scale(0.5);
+  position: absolute;
+  left: 61vh;
+  top: 5%;
+}

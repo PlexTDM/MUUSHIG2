@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" id="idkForm" onsubmit="return false" name="form1">
+        <input type="file" name="file" id="file" accept="image/*">
+        <input type="text" name="username" id="username">
+        <button value="Submit"id="formSubmit" onclick="sendForm()">Submit</button>
+    </form>
+    <h1 id="status">TESTING</h1>
+    <h2 id="remaining"></h2>
+    <div id="cards" class="self-cards"> 
+    </div>
+    <div id="gazriin-mod">
+        <h1>gazriin mod</h1>
+    </div>
+
+    <div class="buttons">
+        <button onclick="restartGame()">restart the game</button>
+        <button onclick="startGame()" id="startBtn">Start the game</button>
+        <button onclick="changeCards()" id="changeCardBtn">Huzruu solih</button>
+    </div>
+
+    <div id="profile"></div>
+    
+	<script src="/socket.io/socket.io.js"></script>
+    <script src="/static/index.js" type="text/javascript"></script>
+
+    <style>
+        #cards{
+            display: flex;
+        }
+        .self-cards img{
+            width: 100px;
+            object-fit: contain;
+        }
+        .card{
+            width: 100%;
+            width: 100px;
+            object-fit: contain;
+        }
+        .card-btn.active{
+            transform: translateY(-20px);
+        }
+        .buttons{
+            display: flex;
+            gap: 10px;
+        }
+        #changeCardBtn{
+            display: none;
+        }
+        .pfp{
+            width: 100px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    </style>
+</body>
+</html>
